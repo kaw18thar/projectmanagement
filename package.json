@@ -1,0 +1,21 @@
+{
+  "name": "projectmanagement",
+  "version": "1.0.0",
+  "description": "a project management application for beginners",
+  "keywords": [
+    "course",
+    "backend",
+    "API",
+    "creation"
+  ],
+  "license": "ISC",
+  "author": "Kawthar AlHarbi",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "devDependencies": {
+    "prettier": "3.9.10"
+  }
+}
