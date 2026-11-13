@@ -1,5 +1,11 @@
 import express from "express";
 import cors from "cors";
+import {
+  emailVerificationMailgenContent,
+  forgotPasswordMailgenContent,
+  sendEmail,
+} from "./utils/mail.js";
+// sendEmail();
 
 const app = express();
 app.get("/", (req, res) => {
