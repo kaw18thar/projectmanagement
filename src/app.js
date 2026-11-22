@@ -1,10 +1,6 @@
 import express from "express";
 import cors from "cors";
-import {
-  emailVerificationMailgenContent,
-  forgotPasswordMailgenContent,
-  sendEmail,
-} from "./utils/mail.js";
+import cookieParser from "cookie-parser";
 // sendEmail();
 
 const app = express();
@@ -20,7 +16,7 @@ app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(express.static("public"));
 //cors configuration
-
+app.use(cookieParser());
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN?.split(",") || "http://localhost:5173",
@@ -32,4 +28,7 @@ app.use(
 //import the routes
 import router from "./routes/healthcheck.routes.js";
 app.use("/api/v1/healthcheck", router);
+import authRouter from "./routes/auth.routes.js";
+app.use("/api/v1/auth", authRouter);
+
 export default app;
